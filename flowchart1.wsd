@@ -1,0 +1,19 @@
+@startuml flowchart
+|AssessmentService|
+start
+:orchestrate();
+:Read employees from CSV;
+|EmployeeReaderService|
+:readBigCompanyCsv();
+|AssessmentService|
+:Identify CEO;
+:Analyze employees;
+|EmployeeAssessService|
+:analyzeAndIdentify(employees, ceoId);
+|AssessmentService|
+:Generate report;
+|EmployeeReportService|
+:bigCompanyReport(employeeNodes);
+|AssessmentService|
+stop
+@enduml
