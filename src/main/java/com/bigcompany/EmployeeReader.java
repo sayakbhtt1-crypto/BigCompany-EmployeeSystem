@@ -1,4 +1,4 @@
-package com.bigcompany.report;
+package com.bigcompany;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -92,7 +92,7 @@ public class EmployeeReader {
                     int salary = Integer.parseInt(parts[3].trim());
                     Integer manager = null;
                     String mgr = parts[4].trim();
-                    if (!mgr.isEmpty()) manager = Integer.parseInt(mgr);
+                    if (!mgr.isEmpty()) manager = Integer.valueOf(mgr);
 
                     employees.add(new Employee(id, first, last, salary, manager));
             }
@@ -126,7 +126,7 @@ public class EmployeeReader {
         List<Integer> employeeCheckList = new ArrayList<>();
         employeeCheckList.add(ceoId);
         List<Integer> nextBandCheckList = new ArrayList<>();
-        List<Employee> directReportees = null;
+        List<Employee> directReportees;
 
         ArrayList<Integer> managerIds = getAllManagerIds(employees);
 
@@ -136,11 +136,12 @@ public class EmployeeReader {
             for (int mgrId: employeeCheckList){
                 
                 if (!managerIds.contains(mgrId)){
+                    //Not a manager but a worker
                     Employee worker = employees.stream().filter( e -> e.getId() == mgrId).findFirst().orElse(null);
                     bigCompanyEmployeeNodes.add(new EmployeeNode(worker, band));
                     employees.remove(worker);
                     managerIds.remove(Integer.valueOf(mgrId));
-                    continue;
+                    continue;//jump to next employee
                 } 
                 
                 directReportees = getDirectReportees(employees, mgrId);

@@ -2,6 +2,10 @@ package com.bigcompany.assess;
 
 import com.bigcompany.model.Employee;
 
+/**
+ * Employee Node class for assessment report generation
+ * @author Sayak Bhattacharya
+ */
 public class EmployeeNode {
     private Employee employee;
     private int band;
@@ -12,7 +16,9 @@ public class EmployeeNode {
     private double salaryLess;
 
     /**
-     * For worker employees without subordinates
+     * Constructor For worker employees
+     * @param employee Employee object
+     * @param band Band of the employee
      */
     public EmployeeNode (Employee employee, int band){
         this.employee = employee;

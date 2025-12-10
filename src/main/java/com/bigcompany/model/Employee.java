@@ -1,12 +1,17 @@
 package com.bigcompany.model;
 
+/**
+ * Replication class for data loading from CSV file
+ * @author Sayak Bhattacharya
+ */
 public class Employee {
     private int id;
     private String firstName;
     private String lastName;
     private int salary;
-    private Integer managerId; // null if top-level
+    private Integer managerId; // null if CEO
     
+    //Constructor
     public Employee(int id, String firstName, String lastName, int salary, Integer managerId) {
         this.id = id;
         this.firstName = firstName;
