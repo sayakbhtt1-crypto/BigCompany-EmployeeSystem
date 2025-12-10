@@ -1,13 +1,13 @@
 package com.bigcompany.assess;
 
-import com.bigcompany.model.Employee;
+import com.bigcompany.model.EmployeeRecord;
 
 /**
  * Employee Node class for assessment report generation
  * @author Sayak Bhattacharya
  */
 public class EmployeeNode {
-    private Employee employee;
+    private EmployeeRecord employeeRecord;
     private int band;
     private double averageSubordinateSalary;
     private boolean isSalaryMore;
@@ -20,8 +20,8 @@ public class EmployeeNode {
      * @param employee Employee object
      * @param band Band of the employee
      */
-    public EmployeeNode (Employee employee, int band){
-        this.employee = employee;
+    public EmployeeNode (EmployeeRecord employeeRecord, int band){
+        this.employeeRecord = employeeRecord;
         this.band = band;
         this.averageSubordinateSalary = 0.0;
         this.isSalaryMore = false;
@@ -33,10 +33,10 @@ public class EmployeeNode {
     public EmployeeNode (){}
 
     //Getters and Setters
-    public Employee getEmployee() {
-        return employee;}
-    public void setEmployee(Employee employee) {
-        this.employee = employee;}
+    public EmployeeRecord getEmployee() {
+        return employeeRecord;}
+    public void setEmployee(EmployeeRecord employeeRecord) {
+        this.employeeRecord = employeeRecord;}
 
     public int getBand() {
         return band;}
@@ -73,7 +73,7 @@ public class EmployeeNode {
     @Override
     public String toString() {
         return String.format("Employee: %d, Band: %d, IsSalaryMore: %b, IsSalaryLess: %b, EmployeeName: %s",
-        employee.getId(), band, isSalaryMore, isSalaryLess, employee.getFirstName() + " " + employee.getLastName());
+        employeeRecord.id(), band, isSalaryMore, isSalaryLess, employeeRecord.firstName() + " " + employeeRecord.lastName());
     }
 }
 
