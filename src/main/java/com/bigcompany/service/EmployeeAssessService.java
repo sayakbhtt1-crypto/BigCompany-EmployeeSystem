@@ -12,6 +12,10 @@ import com.bigcompany.assess.EmployeeNode;
 import com.bigcompany.model.EmployeeRecord;
 import com.bigcompany.utils.BigCompanyConstants;
 
+/**
+ * Service to analyze and identify big company employee aspects
+ * @author Sayak Bhattacharya
+ */
 @Service
 public class EmployeeAssessService {
 
@@ -77,7 +81,6 @@ public class EmployeeAssessService {
                     mgrNode.setSalaryLess(false);
                     mgrNode.setSalaryMore(0.0);
                     mgrNode.setSalaryLess(0.0);
-                    LOGGER.info(BigCompanyConstants.EMPLOYEE_LOG_TEMPLATE, mgrNode.getEmployee().firstName() + " " + mgrNode.getEmployee().lastName(), mgrNode.getSalaryLess());
                 }
                 
                 mgrNode.setBand(band);
@@ -86,7 +89,6 @@ public class EmployeeAssessService {
             }
             if (nextBandCheckList.isEmpty()) break;//EOL reached
             employeeCheckList.clear();
-            LOGGER.info("Employees assessed in band: {}", band);
             band = band+1;
             employeeCheckList.addAll(nextBandCheckList);
             nextBandCheckList.clear();

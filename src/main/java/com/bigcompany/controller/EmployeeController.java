@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.bigcompany.service.AssessmentService;
 
-
+/**
+ * Controller for big company employee assessment endpoints
+ * @author Sayak Bhattacharya
+ */
 @RestController
 @RequestMapping("/bigcompany/assessment")
 public class EmployeeController {

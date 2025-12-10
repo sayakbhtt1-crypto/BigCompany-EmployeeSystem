@@ -1,5 +1,9 @@
 package com.bigcompany.utils;
 
+/**
+ * Constants for Big Company Employee System
+ * @author Sayak Bhattacharya
+ */
 public class BigCompanyConstants {
 
     private BigCompanyConstants(){}

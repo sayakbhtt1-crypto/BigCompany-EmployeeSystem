@@ -10,6 +10,10 @@ import org.springframework.stereotype.Service;
 import com.bigcompany.assess.EmployeeNode;
 import com.bigcompany.model.EmployeeRecord;
 
+/**
+ * Service to orchestrate big company employee assessment
+ * @author Sayak Bhattacharya
+ */
 @Service
 public class AssessmentService {
 

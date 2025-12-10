@@ -15,6 +15,10 @@ import org.springframework.stereotype.Service;
 import com.bigcompany.model.EmployeeRecord;
 import com.bigcompany.utils.BigCompanyConstants;
 
+/**
+ * Service to read big company employee CSV file
+ * @author Sayak Bhattacharya
+ */
 @Service
 public class EmployeeReaderService {
 
