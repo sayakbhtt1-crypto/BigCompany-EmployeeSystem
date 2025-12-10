@@ -1,0 +1,30 @@
+@startuml structure1
+package com.bigcompany.service {
+    class AssessmentService {
+        - EmployeeAssessService employeeAssessService
+        - EmployeeReportService employeeReportService
+        - EmployeeReaderService employeeReaderService
+        + boolean orchestrate()
+    }
+
+    class EmployeeAssessService {
+        + List<EmployeeNode> analyzeAndIdentify(List<EmployeeRecord> employees, int ceoId)
+    }
+
+    class EmployeeReaderService {
+        + List<EmployeeRecord> readBigCompanyCsv()
+    }
+
+    class EmployeeReportService {
+        + void bigCompanyReport(List<EmployeeNode> bigCompanyEmployeeNodes)
+    }
+
+    AssessmentService --> EmployeeAssessService
+    AssessmentService --> EmployeeReportService
+    AssessmentService --> EmployeeReaderService
+    EmployeeAssessService ..> EmployeeNode
+    EmployeeAssessService ..> EmployeeRecord
+    EmployeeReaderService ..> EmployeeRecord
+    EmployeeReportService ..> EmployeeNode
+}
+@enduml
